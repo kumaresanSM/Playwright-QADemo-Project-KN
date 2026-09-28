@@ -1,13 +1,16 @@
 import { test as base } from '@playwright/test';
-import { OrderPlacedPage } from '../pages/OrderPlacedPage';
+import { OrderPlacedPageEle } from '../pages/OrderPlacedPageEle';
 
-type PageFixtures = {
-  orderPlacedPage: OrderPlacedPage;
+type PageFixtures = 
+{
+  orderPlacedPage: OrderPlacedPageEle;
 };
 
-export const test = base.extend<PageFixtures>({
-  orderPlacedPage: async ({ page }, use) => {
-    await use(new OrderPlacedPage(page));
+export const test = base.extend<PageFixtures>(
+{
+  orderPlacedPage: async ({ page }, use) => 
+  {
+    await use(new OrderPlacedPageEle(page));
   },
 });
 
